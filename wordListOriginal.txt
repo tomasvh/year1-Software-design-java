@@ -1,0 +1,11 @@
+abstraction
+fortification
+waves
+riot
+persistance
+security
+testability
+design
+automated
+truthful
+usability

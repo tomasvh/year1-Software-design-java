@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HangmanMain</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">hangman</a>
+</div>
+
+<h1>Coverage Summary for Class: HangmanMain (hangman)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HangmanMain</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package hangman;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import hangman.model.*;
+<i class="no-highlight">4</i>&nbsp;import hangman.view.HangManGame;
+<i class="no-highlight">5</i>&nbsp;
+<b class="nc"><i class="no-highlight">6</i>&nbsp;public class HangmanMain {</b>
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;
+<i class="no-highlight">9</i>&nbsp;    public static void main(String[] args) {
+<i class="no-highlight">10</i>&nbsp;
+<b class="nc"><i class="no-highlight">11</i>&nbsp;        HangmanPlayer random = new HangmanPlayer();</b>
+<b class="nc"><i class="no-highlight">12</i>&nbsp;        HangmanPlayerList playerList = new HangmanPlayerList();</b>
+<b class="nc"><i class="no-highlight">13</i>&nbsp;        playerList.addPlayer(random);</b>
+<b class="nc"><i class="no-highlight">14</i>&nbsp;        HangmanWord word = new HangmanWord(&quot;abstraction&quot;);</b>
+<b class="nc"><i class="no-highlight">15</i>&nbsp;        HangmanWordList wordList = new HangmanWordList(&quot;wordList&quot;);</b>
+<b class="nc"><i class="no-highlight">16</i>&nbsp;        wordList.addWord(word);</b>
+<b class="nc"><i class="no-highlight">17</i>&nbsp;        ListOfWordList listOfLists = new ListOfWordList();</b>
+<b class="nc"><i class="no-highlight">18</i>&nbsp;        listOfLists.addWordList(wordList);</b>
+<b class="nc"><i class="no-highlight">19</i>&nbsp;        String activeWordList = wordList.getListName();</b>
+<b class="nc"><i class="no-highlight">20</i>&nbsp;        HangManGame game = new HangManGame();</b>
+<b class="nc"><i class="no-highlight">21</i>&nbsp;        game.startUp(playerList, wordList, listOfLists, activeWordList);</b>
+<i class="no-highlight">22</i>&nbsp;    }
+<i class="no-highlight">23</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-08-23 15:33</div>
+</div>
+</body>
+</html>

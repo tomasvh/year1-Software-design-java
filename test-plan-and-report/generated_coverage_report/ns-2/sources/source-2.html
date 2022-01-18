@@ -1,0 +1,202 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HangmanPlayerList</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">hangman.model</a>
+</div>
+
+<h1>Coverage Summary for Class: HangmanPlayerList (hangman.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Block, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HangmanPlayerList</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (9/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (35/35)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package hangman.model;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import javax.management.loading.MLet;
+<i class="no-highlight">4</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;public class HangmanPlayerList {
+<i class="no-highlight">7</i>&nbsp;
+<b class="fc"><i class="no-highlight">8</i>&nbsp;    private final ArrayList&lt;HangmanPlayer&gt; playerList = new ArrayList&lt;&gt;();</b>
+<i class="no-highlight">9</i>&nbsp;
+<b class="fc"><i class="no-highlight">10</i>&nbsp;    public HangmanPlayerList(){</b>
+<i class="no-highlight">11</i>&nbsp;
+<i class="no-highlight">12</i>&nbsp;    }
+<i class="no-highlight">13</i>&nbsp;    public void addPlayer (HangmanPlayer player) {
+<b class="fc"><i class="no-highlight">14</i>&nbsp;        this.playerList.add(player);</b>
+<i class="no-highlight">15</i>&nbsp;    }
+<i class="no-highlight">16</i>&nbsp;
+<i class="no-highlight">17</i>&nbsp;    public boolean findPlayer(String player){
+<b class="fc"><i class="no-highlight">18</i>&nbsp;        boolean playerExists = false;</b>
+<b class="fc"><i class="no-highlight">19</i>&nbsp;        for (HangmanPlayer e:this.playerList) {</b>
+<b class="fc"><i class="no-highlight">20</i>&nbsp;            if (player.equals(e.getName())) {</b>
+<b class="fc"><i class="no-highlight">21</i>&nbsp;                playerExists = true;</b>
+<b class="fc"><i class="no-highlight">22</i>&nbsp;                break;</b>
+<i class="no-highlight">23</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        return playerExists;</b>
+<i class="no-highlight">26</i>&nbsp;    }
+<i class="no-highlight">27</i>&nbsp;
+<i class="no-highlight">28</i>&nbsp;    public boolean checkPlayerPassword(String player, String password){
+<b class="fc"><i class="no-highlight">29</i>&nbsp;        boolean passwordCorrect = false;</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;        for (HangmanPlayer e:this.playerList) {</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;            if (player.equals(e.getName())) {</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;                if(password.equals((e.getPassword()))){</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;                    passwordCorrect = true;</b>
+<i class="no-highlight">34</i>&nbsp;                }
+<i class="no-highlight">35</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">36</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;        return passwordCorrect;</b>
+<i class="no-highlight">38</i>&nbsp;    }
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;    public HangmanPlayer getPlayer(String player) {
+<b class="fc"><i class="no-highlight">41</i>&nbsp;        HangmanPlayer current = null;</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;        for (HangmanPlayer e : this.playerList) {</b>
+<b class="fc"><i class="no-highlight">43</i>&nbsp;            if (player.equals(e.getName())) {</b>
+<b class="fc"><i class="no-highlight">44</i>&nbsp;               current = e;</b>
+<b class="fc"><i class="no-highlight">45</i>&nbsp;               break;</b>
+<i class="no-highlight">46</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">47</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">48</i>&nbsp;        return current;</b>
+<i class="no-highlight">49</i>&nbsp;    }
+<i class="no-highlight">50</i>&nbsp;
+<i class="no-highlight">51</i>&nbsp;    public void alterPlayer(HangmanPlayer player) {
+<b class="fc"><i class="no-highlight">52</i>&nbsp;        for (int i = 0; i &lt; this.playerList.size(); i++) {</b>
+<b class="fc"><i class="no-highlight">53</i>&nbsp;            if (player.getName().equals(this.playerList.get(i).getName())){</b>
+<b class="fc"><i class="no-highlight">54</i>&nbsp;                this.playerList.set(i, player);</b>
+<i class="no-highlight">55</i>&nbsp;
+<i class="no-highlight">56</i>&nbsp;            }
+<i class="no-highlight">57</i>&nbsp;        }
+<i class="no-highlight">58</i>&nbsp;    }
+<i class="no-highlight">59</i>&nbsp;
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;    public ArrayList&lt;HangmanPlayer&gt; getList(){
+<b class="fc"><i class="no-highlight">62</i>&nbsp;        return new ArrayList&lt;&gt;(this.playerList);</b>
+<i class="no-highlight">63</i>&nbsp;    }
+<i class="no-highlight">64</i>&nbsp;
+<i class="no-highlight">65</i>&nbsp;    public ArrayList&lt;String&gt; getPrintableNames(){
+<b class="fc"><i class="no-highlight">66</i>&nbsp;        ArrayList&lt;String&gt; namesList = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">67</i>&nbsp;        for (HangmanPlayer e:this.playerList) {</b>
+<b class="fc"><i class="no-highlight">68</i>&nbsp;            namesList.add(e.getName());</b>
+<b class="fc"><i class="no-highlight">69</i>&nbsp;        }</b>
+<b class="fc"><i class="no-highlight">70</i>&nbsp;        return namesList;</b>
+<i class="no-highlight">71</i>&nbsp;    }
+<i class="no-highlight">72</i>&nbsp;
+<i class="no-highlight">73</i>&nbsp;    public String getPlayerNameAndScore (String name) {
+<b class="fc"><i class="no-highlight">74</i>&nbsp;        String returnString = &quot;&quot;;</b>
+<i class="no-highlight">75</i>&nbsp;        /*
+<i class="no-highlight">76</i>&nbsp;        HangmanPlayer chosenPlayer = this.getPlayer(name);
+<i class="no-highlight">77</i>&nbsp;
+<i class="no-highlight">78</i>&nbsp;        if (chosenPlayer != null) {
+<i class="no-highlight">79</i>&nbsp;            returnString = chosenPlayer.getName() + &quot; &quot; + chosenPlayer.getTotalScore();
+<i class="no-highlight">80</i>&nbsp;        }
+<i class="no-highlight">81</i>&nbsp;
+<i class="no-highlight">82</i>&nbsp;         */
+<b class="fc"><i class="no-highlight">83</i>&nbsp;        return  returnString;</b>
+<i class="no-highlight">84</i>&nbsp;    }
+<i class="no-highlight">85</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-08-23 15:33</div>
+</div>
+</body>
+</html>
